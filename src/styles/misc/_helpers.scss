@@ -1,0 +1,80 @@
+.container {
+  width: 100%;
+  max-width: 135rem;
+  margin: 0 auto;
+  padding: 0 5rem;
+  overflow: hidden;
+
+  @include breakpoint(lg) {
+    padding: 0 1.5rem;
+  }
+}
+.container-fluid {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.d-flex {
+  display: flex;
+}
+.d-grid-center {
+  display: grid;
+  place-content: center;
+}
+.d-none {
+  display: none !important;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.jc-between {
+  justify-content: space-between;
+}
+.align-items-center {
+  align-items: center;
+}
+.gap {
+  gap: 1rem;
+}
+.gap-2 {
+  gap: 2rem;
+}
+.gap-3 {
+  gap: 3rem;
+}
+
+//Buttons
+
+.btn-main {
+  background-color: $primary;
+  color: $white;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 1.4rem 4rem;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    box-shadow: 5px 5px 0 $black;
+  }
+}
+.btn-secondary {
+  background-color: #000;
+  position: relative;
+  padding: 1.3rem 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: $white;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    box-shadow: 5px 5px 0 $primary;
+  }
+}
+
+.text-wrap {
+  display: block;
+}
+.text-primary {
+  color: $primary;
+}

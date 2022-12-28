@@ -1,0 +1,117 @@
+header {
+  width: 100%;
+  min-height: 100vh;
+
+  .container {
+    height: 100%;
+
+    .navbar {
+      @include flex(null, space-between, center, 1rem);
+      flex-wrap: wrap;
+      width: 100%;
+      padding: 3rem 0;
+
+      &__logo a {
+        padding: 0.5rem 0;
+      }
+
+      &__nav {
+        @include flex(null, center, center, 3rem);
+        flex-wrap: wrap;
+
+        @include breakpoint(lg) {
+          gap: 1.5rem;
+          flex-direction: column;
+          background-color: $light-color;
+          position: absolute;
+          top: 8rem;
+          right: 3rem;
+          max-width: 100%;
+          padding: 3rem 4rem;
+          box-shadow: 5px 5px 0 $black, -5px -5px 0 $primary;
+          opacity: 0;
+          visibility: hidden;
+          transform: translate(50%);
+          transform-origin: right;
+          transition: all 0.2s ease-in-out;
+
+          &.navbar__nav-active {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(0);
+          }
+        }
+
+        .nav__link {
+          display: block;
+          padding: 0.5rem 1rem;
+          position: relative;
+        }
+        .nav__link::after {
+          content: '';
+          height: 0.15rem;
+          width: 0;
+          background: $black;
+          position: absolute;
+          top: 2.5rem;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          transition: all 0.2s ease;
+        }
+        .nav__link:hover::after {
+          width: 60%;
+        }
+      }
+
+      &__btn {
+        display: none;
+        padding: 0.5rem 1rem;
+
+        @include breakpoint(lg) {
+          display: block;
+        }
+      }
+    }
+
+    .intro {
+      min-height: calc(100vh - 10.76rem);
+      @include flex(column, space-evenly, start, 2rem);
+
+      &__top {
+        @include flex(null, space-between, center, 3rem);
+        width: 100%;
+
+        @include breakpoint(md) {
+          flex-direction: column;
+        }
+      }
+
+      &__title {
+        @include flex(column, center, start, 2rem);
+        flex-basis: 60%;
+
+        h1 {
+          font-size: clamp(6rem, 9rem, 7vw);
+        }
+      }
+
+      &__imgs {
+        display: flex;
+        justify-content: end;
+        flex-wrap: wrap;
+        flex-basis: 40%;
+
+        img {
+          width: 100%;
+          max-width: 20rem;
+
+          &:last-child {
+            position: relative;
+            top: 5rem;
+          }
+        }
+      }
+    }
+  }
+}
